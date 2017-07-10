@@ -2,32 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="시간과 위치를 기준으로 검색하는 검색 포털">
+    <meta name="description" content="타임 넛 검색 포털">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Timenut</title>
-    <link rel="stylesheet" type="text/css" href="public/css/timenut.css">
+    <link rel="stylesheet" type="text/css" href="public/stylesheet/timenut.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/assets/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-    <div id="map"></div>
-    <div id="search">
-        <g class="node" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="translate( 665.7347726442368, 269.2102508427012 )"><circle r="70"></circle><text class="label" transform="translate( -78.7265625 , 14 )" style="font-size: 49.4975px; width: 175px;">Design</text><text class="count" transform="translate( -8.5078125 , 56 )" style="font-size: 10px;">889</text></g>
-        <g class="node" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="translate( 665.7347726442368, 269.2102508427012 )"><circle r="70"></circle><text class="label" transform="translate( -78.7265625 , 14 )" style="font-size: 49.4975px; width: 175px;">Design</text><text class="count" transform="translate( -8.5078125 , 56 )" style="font-size: 10px;">889</text></g>
-        <g class="node" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="translate( 665.7347726442368, 269.2102508427012 )"><circle r="70"></circle><text class="label" transform="translate( -78.7265625 , 14 )" style="font-size: 49.4975px; width: 175px;">Design</text><text class="count" transform="translate( -8.5078125 , 56 )" style="font-size: 10px;">889</text></g>
+    <div id="app">
+        <header>
+                <img src="public/assets/Timenut-logo.png" style="width: 110px; height: 16px"/>
+        </header>
+        <div id="resizable" class="ui-widget-content">
+            <div id="map"></div>
+        </div>
+        <div id="content">
+            <div id="search">
+                <div class="input-container">
+                    <div class="input-container set">
+                        <input class="input" type="text">
+                        <button id="word-button">검색</button>
+                    </div>
+                </div>
+                <div id="word-container">
+                </div>
+                <div class="list-container">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div>Timenut</div>
+        </footer>
     </div>
-    <script src="public/js/modernizr-custom.js"></script>
-    <script src="public/js/map.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQV1TvJJJqwF4RTaIDXhi-qLEDbC4Z8BY&callback=initMap"
             async defer>
     </script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <!--<script>
-        var app = new Vue({
-            el: '#app', // 어떤 엘리먼트에 적용을 할 지 정합니다
-            // data 는 해당 뷰에서 사용할 정보를 지닙니다
-            data: {
-                name: 'Vue'
-            }
-        });
-    </script>-->
+    <script src="public/js/map.js"></script>
+    <script src="public/js/screenSplit.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="public/js/d3cloud.js"></script>
+    <script src="public/js/d3util.js"></script>
 </body>
 </html>
