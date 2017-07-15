@@ -1,3 +1,33 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@media screen and (max-width: 920px) and (min-width: 621px) {
+    .full-width {
+        max-width: 604px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 620px){
+    .full-width {
+        max-width: 302px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon/icomoon.eot');
+    src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.woff') format('woff'),
+    url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*, *::before, *::after { box-sizing: border-box; -webkit-box-sizing: border-box; }
+.cf::after, .cf::before { content: ' '; display: table; }
+.cf::after { clear: both; }
 html,body{
     font-family: 'Open sans', sans-serif;
     height:100vh;
@@ -6,62 +36,614 @@ html,body{
     padding: 0;
     overflow:hidden;
 }
-
-button {
-    background-color:#5677fc;
-    color:#fff;
-    border:1px solid #5677fc;
-    height: 22px;
-    font-size: 12px;
-    display: inline-block;
+body{
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #484848;
 }
-
-header{
-    background-color: white;
-    height: auto;
-    padding: 10px;
-    border-bottom: solid #5677fc 1px;
+a {
+    text-decoration: none;
+    outline: none;
 }
-
+#header{
+    height: 40px;
+}
 .input {
-    border:1px solid #5677fc;
-    padding:3px 5px;
-    height: 14px;
-    display: inline-block;
-    font-size: 12px;
-    width:80%;
+    border:1px solid #1977CC;
+    height: 30px;
+    font-size: 16px;
+    width:320px;
+    margin: 0;
+}
+
+#word-button {
+    background-color:#1977CC;
+    color:#fff;
+    border:1px solid #1977CC;
+    width: auto;
+    height: 30px;
+    font-size: 16px;
+    margin: 0;
 }
 .input-container {
-    width: 100%;
-    height:auto;
-    margin-top: 7px;
-    display: flex;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
-    background-color: white;
+     width:100%;
+     height:auto;
+     margin-bottom: 10px;
+     text-align: center;
+     background-color: white;
+ }
+.location-container {
+    position: relative;
+    background-size: 24px;
+    height: 30px;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 30px;
+    float: left;
 }
-.word-container {
+.picker-container {
+    position: relative;
+    background-size: 22px;
+    height: 30px;
+    text-align: left;
+    margin-left: 5px;
+    padding-left: 30px;
+    line-height: 30px;
+    float: left;
+}
+#filter{
+    float: left;
+}
+
+#datepicker{
+    width: 86px;
+    border: 0;
+    color: #1977CC;
+    font: inherit;
+}
+#timepicker{
+    width: 65px;
+    border: 0;
+    color: #1977CC;
+    font: inherit;
+}
+#word-container {
     width: 100%;
-    height: 10%;
-    background-color: green;
+    height: 120px;
 }
 .list-container {
     width: 100%;
-    height: 80%;
-    background-color: yellow;
+    height: 64%;
+    overflow:scroll;
+    -webkit-overflow-scrolling:touch;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+#date-text{
+    position: relative;
+    z-index: 10;
+    color: #1977CC;
+    margin-right: 5px;
+}
+#time-text{
+    position: relative;
+    z-index: 11;
+    color: #1977CC;
 }
 #map {
     width: 100%;
-    height: calc(100vh - 26px);
+    height: 100vh;
 }
 #search{
     width: 100%;
-    height:calc(100vh - 26px);
-    background-color: white;
+    height:100vh;
+    background-color:white;
 }
-#resizable  { float:left; width:68%;}
-#content    { overflow:hidden; }
+#search #img{
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+}
+#resizable  { float:left; width:38%;}
+#content{
+    visibility: hidden;
+    overflow:hidden;
+}
 #resizable, #content, #irrelevant { text-align:center; }
 
 /* overright jQuery UI borders */
-#resizable { border:0 !important; border-right:1px solid #5677fc !important; }
+#resizable { border:0 !important; border-right:3px solid #FAFAFA !important; }
+
+.red {
+    color: #ef5350;
+}
+
+.blue {
+    color: #0277bd;
+}
+
+.orange {
+    color: #fd6b0d;
+}
+
+.yellow {
+    color: #e5af0e;
+}
+
+.green {
+    color: #2e7d32;
+}
+
+.cyan {
+    color: #3f9489;
+}
+
+.full-width {
+    position: relative;
+    max-width: 906px;
+    margin: 20px auto;
+}
+
+.col-md-3 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+ ---- Switch button ----
+.icon-switch {
+	width: 80%;
+}
+
+.card {
+	float: left;
+	font-size: 20px;
+	margin-right: 40px;
+}
+
+.list {
+	float: left;
+	font-size: 20px;
+	display: inline-block;
+	margin-right: 40px;
+}
+
+.active {
+	color: #1977CC;
+}
+.Switch {
+    position: relative;
+    font-weight: bold;
+    color: #fff;
+    width: 38px;
+    height: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    background: #1977CC;
+    float:right;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition   : background-color 0.3s ease-in-out;
+    -o-transition     : background-color 0.3s ease-in-out;
+    -ms-transition    : background-color 0.3s ease-in-out;
+}
+
+.Switch.list {
+    background: #fd7117;
+}
+.Switch .Toggle {
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+    border-radius: 13px;
+    background: #fff;
+    z-index: 999;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition   : all 0.3s ease-in-out;
+    -o-transition     : all 0.3s ease-in-out;
+    -ms-transition    : all 0.3s ease-in-out;
+}
+
+.Switch.list .Toggle { left: 2px; }
+.Switch.card .Toggle { left: 22px; }
+
+/* ---- Card View ---- */
+.card-view {
+    background: #fff;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(204,204,204,0.2);
+    -moz-box-shadow   : 0px 1px 1px 0px rgba(204,204,204,0.2);
+    box-shadow        : 0px 1px 1px 0px rgba(204,204,204,0.2);
+    float: left;
+    width: 292px;
+    margin: 5px;
+}
+
+.container {
+    border: 1px solid #efefef;
+    padding: 15px;
+}
+
+.bg {
+    display: block;
+    overflow: hidden;
+    max-height: 170px;
+    max-width: 292px;
+    background: #000;
+}
+
+.bg img {
+    -webkit-transform: translate3d(0,-5px,0);
+    transform: translate3d(0,-5px,0);
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transition: opacity 0.35s, transform 0.35s;
+}
+
+.bg:hover img {
+    opacity: 0.7;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.tag_name {
+    font-family: 'Roboto Slab', serif;
+    font-size  : 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* COMPANY INFO ------------------------ */
+.c_logo {
+    display: table-cell;
+}
+
+.c_logo img {
+    display: inline-block;
+    outline: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.c_info {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-left: 10px;
+    line-height: 18px;
+}
+
+.c_name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+
+.c_industry {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #7e8890;
+}
+
+.card-view #c_stars, #c_stars span { /* white star bottom */
+    display: inline-block;
+    background: url('https://s15.postimg.org/igu2opvh3/stars.png') 0 -12px repeat-x;
+    width: 60px;
+    height: 12px;
+}
+
+.card-view #c_stars span { /* orange stars overlay  - set width by JS code */
+    background-position: 0 0;
+    vertical-align: super;
+}
+
+.c_num {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: super;
+}
+
+.c_content {
+    margin-top: -10px;
+}
+
+.c_content p {
+    line-height: 21px;
+}
+
+.c_content .title {
+    color: #484848;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+}
+
+.c_content .review {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin-top: -10px;
+}
+
+/* USER INFO ------------------------ */
+.user .user_avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.user .user_avatar {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.user .user_info {
+    display: table-cell;
+    vertical-align: middle;
+    color: rgba(0,0,0,0.35);
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 10px;
+}
+
+.user .user_name {
+    font-weight: 500;
+}
+
+/* ---- List View ---- */
+.list-view {
+    background: #fff;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(204,204,204,0.2);
+    -moz-box-shadow   : 0px 1px 1px 0px rgba(204,204,204,0.2);
+    box-shadow        : 0px 1px 1px 0px rgba(204,204,204,0.2);
+    float: left;
+    margin: 5px;
+}
+
+.list-view:last-child {
+    margin-bottom: 20px;
+}
+
+.list-view .container {
+    border: 1px solid #efefef;
+    padding: 15px;
+}
+
+.list-view .bg {
+    display: none;
+}
+
+.list-view .bg img {
+    -webkit-transform: translate3d(0,-5px,0);
+    transform: translate3d(0,-5px,0);
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transition: opacity 0.35s, transform 0.35s;
+}
+
+.list-view .bg:hover img {
+    opacity: 0.7;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.list-view .tag_name {
+    font-family: 'Roboto Slab', serif;
+    font-size  : 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* COMPANY INFO ------------------------ */
+.list-view .c_logo {
+    display: none;
+}
+
+.list-view .c_logo img {
+    display: none;
+}
+
+.list-view .c_info {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-left: 0;
+    line-height: 18px;
+}
+
+.list-view .c_name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+
+.list-view .c_industry {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #7e8890;
+}
+
+.list-view #c_stars, #c_stars span { /* white star bottom */
+    display: inline-block;
+    background: url('https://s15.postimg.org/igu2opvh3/stars.png') 0 -12px repeat-x;
+    width: 60px;
+    height: 12px;
+}
+
+.list-view #c_stars span { /* orange stars overlay  - set width by JS code */
+    background-position: 0 0;
+    vertical-align: super;
+}
+
+.list-view .c_num {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: super;
+}
+
+.list-view .c_content {
+    margin-top: -15px;
+}
+
+.list-view .c_content p {
+    line-height: 21px;
+}
+
+.list-view .c_content .title {
+    color: #484848;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+}
+
+.list-view .c_content .review {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin-top: -10px;
+}
+
+/* USER INFO ------------------------ */
+.list-view .user .user_avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.user .user_avatar {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.list-view .user .user_info {
+    display: table-cell;
+    vertical-align: middle;
+    color: rgba(0,0,0,0.35);
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 10px;
+}
+
+.list-view .user .user_name {
+    font-weight: 500;
+}
+.icon_date{
+    width: 20px;
+}
+/* Disable Toggle style
+********************************/
+a, a:focus, a:active, a:hover, object, embed { outline: none; text-decoration: none; }
+/* Dropdown Toggle on style */
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: inherit; /* Set to inherit when using mouse hover to open dropdown */
+    color: inherit;
+}
+/* Toggle off style */
+.navbar .nav li.dropdown.open.active > .dropdown-toggle,
+.navbar .nav > li.dropdown > a:focus {
+    background: inherit;
+    color: inherit;
+}
+/* Toggle hover */
+.navbar .nav li.dropdown > .dropdown-toggle:hover,
+.navbar .nav li.dropdown.open > .dropdown-toggle:hover {
+    background-color: #DDDDDD;
+}
+
+
+/* Toggle caret*/
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+    border-bottom-color:#333;
+    border-top-color:#333;
+}
+/* Toggle caret hover */
+.navbar .nav li.dropdown > a:hover .caret,
+.navbar .nav li.dropdown > a:focus .caret {
+    border-bottom-color: #333;
+    border-top-color: #333;
+}
+/* Toggle caret active */
+.navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+    border-bottom-color:#333;
+    border-top-color: #333;
+}
+
+/* Hover style
+********************************/
+.navbar .nav > li > a, .mega-menu a
+{
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+
+    /* -webkit-transform: translate3d(0, 0, 0); Webkit Hardware Acceleration*/
+    -webkit-backface-visibility: hidden; /* Safari Flicker Fix #2 */
+    -webkit-transform: translateZ(0);
+}
+
+/* dropdown
+********************************/
+
+.dropbtn {
+    color: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    right: 0;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    float: left;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
