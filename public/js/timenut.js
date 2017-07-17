@@ -34,24 +34,24 @@ $(function() {
         }
     });
 
-    // $("#list").click(function() {
-    //   $("#list").addClass("active");
-    //   $("#card").removeClass("active");
-    //   $(".card-view").attr("class", "list-view");
-    //   $(".list-view").removeAttr("style");
-    // });
+    $("#list").click(function() {
+      $("#list").addClass("active");
+     ("#card").removeClass("active");
+      $(".card-view").attr("class", "list-view");
+      $(".list-view").removeAttr("style");
+    });
 
-    // $('#card').click(function() {
-    //   $("#card").removeClass("active");
-    //   $("#list").removeClass("active");
-    //   $("#card").addClass("active");
-    //   $(".list-view").attr("class", "card-view");
-    //   var container = document.querySelector('.col-md-3');
-    //   var msnry = new Masonry( container, {
-    //     itemSelector: '.card-view',
-    //     columnWidth: 302
-    //   });
-    // });
+    $('#card').click(function() {
+      $("#card").removeClass("active");
+      $("#list").removeClass("active");
+      $("#card").addClass("active");
+      $(".list-view").attr("class", "card-view");
+      var container = document.querySelector('.col-md-3');
+      var msnry = new Masonry( container, {
+        itemSelector: '.card-view',
+        columnWidth: 302
+      });
+    });
 
     $("span#c_stars").stars();
 });
@@ -64,23 +64,21 @@ $(function() {
     });
 });
 
-/* When the user clicks on the button,
- toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+(function($){
+    $("#datepicker").change(function () {
+        $("#date-text").text($(this).val());
+    });
+    $("#timepicker").change(function () {
+        $("#time-text").text($(this).val());
+    });
+})(jQuery);
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
+$( "#timepicker" ).timeDropper();
+$('#datepicker').dateDropper();
+$(document).ready(function() {
+    // Initiate Pretty Dropdowns
+    $('.pretty-classic').prettyDropdown({
+        classic: true,
+        customClass: 'arrow triangle',
+    });
+});

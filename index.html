@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" sizes="16x16" href="public/assets/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="public/stylesheet/timenut.css">
-    <link rel="stylesheet" type="text/css" href="public/stylesheet/timedropper.css">
-    <link rel="stylesheet" type="text/css" href="public/stylesheet/datedropper.css">
-    <link rel="stylesheet" type="text/css" href="public/stylesheet/dropdown.css">
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet prefetch" type="text/css" href="public/stylesheet/timenut.css">
+    <link rel="stylesheet prefetch" type="text/css" href="public/stylesheet/timedropper.css">
+    <link rel="stylesheet prefetch" type="text/css" href="public/stylesheet/datedropper.css">
+    <link rel="stylesheet prefetch" type="text/css" href="public/stylesheet/prettydropdowns.css">
+    <link rel="stylesheet prefetch" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <script src="public/js/modernizr.custom.js"></script>
 </head>
@@ -33,19 +34,23 @@
                     </div>
                 </div>
                 <div id="word-container">
+
                 </div>
                 <div class="cf">
+
                     <div id="filter">
+
                         <div class="location-container">
-                            <article id="demo-1">
-                                <section>
-                                    <select>
-                                        <option>Option 1</option>
-                                        <option>Option 2</option>
-                                        <option>Option 3</option>
-                                    </select>
-                                </section>
-                            </article>
+                            <select id="qty" class="pretty-classic">
+                                <option>1km</option>
+                                <option>3km</option>
+                                <option>5km</option>
+                                <option>10km</option>
+                                <option>15km</option>
+                                <option>30km</option>
+                                <option>50km</option>
+                                <option>모든지역</option>
+                            </select>
                         </div>
                         <div class="picker-container">
                             <div style="display: inline-block; vertical-align: middle; position: relative;">
@@ -365,23 +370,15 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js'></script>
     <script src='http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js'></script>
-    <script src="public/js/timenut.js"></script>
+
     <script src="public/js/timedropper.js"></script>
     <script src="public/js/datedropper.js"></script>
-    <script src="public/js/jquery.dropdown.js"></script>
+    <script src="public/js/timenut.js"></script>
     <script>
-        (function($){
-            $("#datepicker").change(function () {
-                $("#date-text").text($(this).val());
-            });
-            $("#timepicker").change(function () {
-                $("#time-text").text($(this).val());
-            });
-            $('select, ul').dropdown();
-        })(jQuery);
 
-        $( "#timepicker" ).timeDropper();
-        $('#datepicker').dateDropper();
     </script>
+    <a href="#" class="float">
+        <i class="fa fa-plus my-float"></i>
+    </a>
 </body>
 </html>

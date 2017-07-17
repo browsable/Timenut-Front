@@ -6,7 +6,7 @@ var margin = {top: 10, right: 20, bottom: 30, left: 20},
 d3.csv("public/assets/data.csv", function(error, data) {
 
     var categories = d3.keys(d3.nest().key(function(d) { return d.category; }).map(data));
-    var color = d3.scale.ordinal().range(["#05318C","#74A26","#5381B5","#e78ac3","#F0A546","#0043FF","#FF6138"]);
+    var color = d3.scale.ordinal().range(["#0C1575","#000000","#FF5714","#EC008C","#F0A546","#0043FF","#FF6138"]);
     var fontSize = d3.scale.pow().exponent(5).domain([0,1]).range([10,80]);
 
     var layout = d3.layout.cloud()
